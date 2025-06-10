@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: rgb(229 231 235);
+  }
+  
+  body {
+    background-color: #fafbfc;
+    color: rgb(15 23 42);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Poppins', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white font-semibold py-3.5 px-7 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-teal-700 border-2 border-teal-600 font-semibold py-3.5 px-7 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-semibold py-3.5 px-7 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100/60 p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 backdrop-blur-sm;
+  }
+  
+  .card-highlight {
+    @apply bg-gradient-to-br from-white to-teal-50/30 rounded-2xl shadow-xl border border-teal-100 p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 backdrop-blur-sm;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-slate-50 via-teal-50/30 to-cyan-50/50;
+  }
+  
+  .gradient-bg-dark {
+    @apply bg-gradient-to-br from-slate-800 via-teal-900 to-cyan-900;
+  }
+  
+  .gradient-bg-accent {
+    @apply bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-blue-500/10;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-white {
+    @apply bg-gradient-to-r from-white via-teal-100 to-cyan-100 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .fade-in-up {
+    @apply opacity-0 translate-y-8;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .professional-shadow {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 20px 25px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .medical-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .dental-gradient {
+    background: linear-gradient(135deg, #14b8a6 0%, #0891b2 50%, #3b82f6 100%);
+  }
+}
+
+/* Advanced animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Enhanced scrollbar with dental theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #f1f5f9, #e2e8f0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #14b8a6, #0891b2);
+  border-radius: 10px;
+  border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0d9488, #0e7490);
+}
+
+/* Smooth scrolling with professional easing */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Professional focus states - no visible outline on click, but keep for keyboard */
+*:focus {
+  outline: none;
+}
+
+/* Only show focus outline for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for buttons and links when clicked */
+button:focus,
+a:focus,
+[role="button"]:focus {
+  outline: none;
+}
+
+/* Keep focus visible for keyboard users on interactive elements */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #14b8a6;
+  color: white;
+}
+
+/* Text styling improvements */
+.text-professional {
+  @apply text-slate-700 leading-relaxed;
+}
+
+.heading-professional {
+  @apply text-slate-800 font-semibold tracking-tight;
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hover-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-hover-effect:hover::before {
+  left: 100%;
+}
+
+/* Enhanced card animations */
+.card-professional {
+  @apply bg-white rounded-2xl shadow-lg border border-gray-100/60 p-8 transition-all duration-500 hover:shadow-2xl backdrop-blur-sm;
+  transform: translateY(0);
+}
+
+.card-professional:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Medical professional styling */
+.medical-card {
+  @apply bg-gradient-to-br from-white to-teal-50/20 rounded-2xl shadow-xl border border-teal-100/50 transition-all duration-300;
+}
+
+.medical-card:hover {
+  @apply shadow-2xl border-teal-200;
+  transform: translateY(-5px);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .section-padding {
+    @apply py-12 px-4;
+  }
+  
+  .card-professional {
+    @apply p-6;
+  }
+}
+
+/* Video background optimizations */
+.video-background {
+  @apply absolute inset-0 w-full h-full object-cover;
+  filter: brightness(0.6) contrast(1.1);
+}
+
+/* Mobile video handling */
+@media (max-width: 768px) {
+  .video-background {
+    object-position: center center;
+    filter: brightness(0.5) contrast(1.2);
+  }
+}
+
+/* Video overlay for better text readability */
+.video-overlay {
+  @apply absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/40;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    @apply py-12 px-4;
+  }
+  
+  .card-professional {
+    @apply p-6;
+  }
+}
+
+/* Remove selection borders and outlines from navigation */
+nav a,
+nav button,
+.logo,
+.logo *,
+[class*="nav"],
+[class*="menu"],
+header a,
+header button,
+header div[class*="cursor-pointer"],
+header *:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+nav a:focus,
+nav button:focus,
+.logo:focus,
+.logo *:focus,
+header a:focus,
+header button:focus,
+header div:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Prevent text selection on navigation elements */
+nav,
+.logo,
+header {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Remove blue highlight on touch devices */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection only where needed */
+p, span, div:not(nav):not(header):not([class*="nav"]):not([class*="menu"]):not([class*="logo"]) {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
