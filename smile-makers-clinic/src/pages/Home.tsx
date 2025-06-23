@@ -442,8 +442,8 @@ const Home = () => {
             </p>
           </motion.div>
 
-          {/* Single row layout for all screen sizes */}
-          <div className="flex justify-center gap-6 lg:gap-8 overflow-x-auto pb-4">
+          {/* Responsive grid layout - ensures proper ordering on mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 justify-items-center">
             {[
               { image: '/images/dr-1.jpg', name: 'Dr. Ambika Dhaliwal', specialty: 'Oral Medicine & Radiology' },
               { image: '/images/dr-2.jpg', name: 'Dr. Yadvinder S Dhaliwal', specialty: 'Orthodontist' },
@@ -452,7 +452,7 @@ const Home = () => {
             ].map((doctor, index) => (
               <motion.div
                 key={index}
-                className="flex-shrink-0 text-center group w-64"
+                className="text-center group w-full max-w-64"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
